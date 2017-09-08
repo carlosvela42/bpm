@@ -1,0 +1,183 @@
+-- Updated by データベース設計書_V0.93.xls
+
+CREATE TABLE "##"."DAT_PROCESS" 
+   ("PROCESSID" int NOT NULL,
+    "WORKITEMID" nvarchar2(20) NOT NULL, 
+    "TEMPLATEID" nvarchar2(20), 
+    "LASTUPDATETIME" nvarchar2(17),
+     PRIMARY KEY (PROCESSID,WORKITEMID)
+   );
+   
+   
+   CREATE TABLE "##"."DAT_WORKITEM" 
+   ("WORKITEMID" nvarchar2(20)NOT NULL, 
+    "TASKID" nvarchar2(20)NOT NULL, 
+    "TEMPLATEID" nvarchar2(20), 
+    "LASTHISTORYNO" int NOT NULL,
+    "LASTUPDATETIME" nvarchar2(17),
+    PRIMARY KEY (WORKITEMID)
+   );
+   
+   CREATE TABLE "##"."DAT_FOLDERITEM" 
+   ("WORKITEMID" nvarchar2(20) NOT NULL, 
+    "FOLDERITEMNO" nvarchar2(20) NOT NULL, 
+    "FOLDERITEMORDER" number(20) NOT NULL, 
+    "TEMPLATEID" nvarchar2(20), 
+    "LASTUPDATETIME" nvarchar2(17), 
+    PRIMARY KEY (WORKITEMID,FOLDERITEMNO)
+   );
+   
+   CREATE TABLE "##"."DAT_DOCUMENT" 
+   ("WORKITEMID" nvarchar2(20) NOT NULL, 
+    "FOLDERITEMNO" nvarchar2(20) NOT NULL, 
+    "DOCUMENTNO" nvarchar2(20) NOT NULL,
+    "DOCUMENTORDER" number(20) NOT NULL,
+    "TEMPLATEID" nvarchar2(20), 
+    "PAGECOUNT" int NOT NULL,
+    "VIEWINFORMATION" nvarchar2(2000),
+    "DOCUMENTTYPE" nvarchar2(20),
+    "LASTUPDATETIME" nvarchar2(17),
+    --CONSTRAINT "ENSURE_JSON1" CHECK (VIEWINFORMATION IS JSON) ENABLE,
+    PRIMARY KEY (WORKITEMID,FOLDERITEMNO,DOCUMENTNO)
+   );
+   
+   CREATE TABLE "##"."DAT_LAYER" 
+   ("WORKITEMID" nvarchar2(20) NOT NULL, 
+    "FOLDERITEMNO" nvarchar2(20) NOT NULL, 
+    "DOCUMENTNO" nvarchar2(20) NOT NULL,
+    "LAYERNO" nvarchar2(20) NOT NULL,
+    "LAYERORDER" number(20),
+    "LAYERNAME" nvarchar2(255) NOT NULL,
+    "TEMPLATEID" nvarchar2(20), 
+    "OWNERID" nvarchar2(255) NOT NULL,
+    "ANNOTATIONS" NCLOB,
+    "INSERTDATETIME" nvarchar2(17),
+    "LASTUPDATETIME" nvarchar2(17),
+    --CONSTRAINT "ENSURE_JSON2" CHECK (ANNOTATIONS IS JSON) ENABLE,
+    PRIMARY KEY (WORKITEMID,FOLDERITEMNO,DOCUMENTNO,LAYERNO,OWNERID)
+   );
+   
+   CREATE TABLE "##"."STR_DATA_FILE"
+   ("WORKITEMID" nvarchar2(20) NOT NULL, 
+    "FOLDERITEMNO" nvarchar2(20) NOT NULL, 
+    "DOCUMENTNO" nvarchar2(20) NOT NULL,
+    "DOCUMENTDATAPATH" nvarchar2(260), 
+    "LASTUPDATETIME" nvarchar2(17),
+    PRIMARY KEY (WORKITEMID,FOLDERITEMNO,DOCUMENTNO)
+   );
+
+   CREATE TABLE "##"."STR_LOG_ACCESS"
+   ("EVENTID" nvarchar2(20) NOT NULL, 
+    "PROCESSTIME" nvarchar2(17), 
+    "USERID" nvarchar2(255) NOT NULL,
+    "WORKITEMID" nvarchar2(20) NOT NULL, 
+    "HISTORYNO" int NOT NULL,
+    "TASKID" nvarchar2(20) NOT NULL,
+    "LASTUPDATETIME" nvarchar2(17),
+    PRIMARY KEY (EVENTID)
+   );
+   
+   CREATE TABLE "##"."CTL_EVENT" 
+   ("EVENTID" nvarchar2(20) NOT NULL, 
+    "USERID" nvarchar2(255) NOT NULL, 
+    "WORKITEMID" nvarchar2(20) NOT NULL,
+    "STATUS" nvarchar2(20), 
+    "TASKID" nvarchar2(20) NOT NULL,
+    "TRANSACTIONTOKEN" nvarchar2(255),
+    "WORKITEMDATA" NCLOB,
+    "LASTUPDATETIME" nvarchar2(17),
+    --CONSTRAINT "ENSURE_JSON3" CHECK (WORKITEMDATA IS JSON) ENABLE,
+    PRIMARY KEY (EVENTID)
+   );
+   
+   CREATE TABLE "##"."MGR_TEMPLATE" 
+   ("TEMPLATEID" nvarchar2(20) NOT NULL, 
+    "TEMPLATENAME" nvarchar2(255), 
+    "TEMPLATETABLENAME" nvarchar2(255),
+    "TEMPLATEFIELD" NCLOB,
+    "TEMPLATETYPE"nvarchar2(255),
+    "LASTUPDATETIME" nvarchar2(17),
+    --CONSTRAINT "ENSURE_JSON5" CHECK (TEMPLATEFIELD IS JSON) ENABLE,
+    PRIMARY KEY (TEMPLATEID)
+   );
+   
+   CREATE TABLE "##"."CTL_TEMPLATE" 
+   ("USERID" nvarchar2(255) NOT NULL, 
+    "TEMPLATEID" nvarchar2(20) NOT NULL, 
+    "ACCESSAUTHORITY" nvarchar2(20),
+    "LASTUPDATETIME" nvarchar2(17),
+    PRIMARY KEY (USERID,TEMPLATEID)
+   );
+   
+   CREATE TABLE "##"."MGR_TEMPLATE_P" 
+   ("PROFILEID" nvarchar2(255) NOT NULL, 
+    "TEMPLATEID" nvarchar2(20) NOT NULL, 
+    "ACCESSAUTHORITY" nvarchar2(20),
+    "LASTUPDATETIME" nvarchar2(17),
+    PRIMARY KEY (PROFILEID,TEMPLATEID)
+   );
+   
+   CREATE TABLE "##"."MGR_TEMPLATE_U" 
+   ("USERID" nvarchar2(255) NOT NULL, 
+    "TEMPLATEID" nvarchar2(20) NOT NULL, 
+    "ACCESSAUTHORITY" nvarchar2(20),
+    "LASTUPDATETIME" nvarchar2(17),
+    PRIMARY KEY (USERID,TEMPLATEID)
+   );
+   
+   CREATE TABLE "##"."MGR_PROCESS" 
+   ("PROCESSID" int NOT NULL, 
+    "PROCESSNAME" nvarchar2(255), 
+    "PROCESSVERSION" float,
+    "DESCRIPTION" nvarchar2(255),
+    "PROCESSDEFINITION" nvarchar2(2000),
+    "DOCUMENTDATASAVEPATH" nvarchar2(260),
+    "LASTUPDATETIME" nvarchar2(17),
+    --CONSTRAINT "ENSURE_JSON4" CHECK (PROCESSDEFINITION IS JSON) ENABLE,
+    PRIMARY KEY (PROCESSID)
+   );
+   
+   CREATE TABLE "##"."MGR_SCHEDULE" 
+   ("SCHEDULEID" int NOT NULL, 
+    "HOSTNAME" nvarchar2(255),
+    "PROCESSISERVICEID" int,
+    "TASKID" nvarchar2(20) NOT NULL,
+    "STARTTIME" nvarchar2(17),
+    "ENDTIME" nvarchar2(17),
+    "ENABLE_DISABLE" nvarchar2(20) NOT NULL,
+    "NEXTRUNDATE"nvarchar2(17),
+    "RUNINTERVALDAY"nvarchar2(8),
+    "RUNINTERVALHOUR" nvarchar2(2),
+    "RUNINTERVALMINUTE" nvarchar2(2),
+    "RUNINTERVALSECOND" nvarchar2(2),
+    "LASTUPDATETIME" nvarchar2(17),
+    PRIMARY KEY (SCHEDULEID)
+   );
+   
+    CREATE TABLE "##"."MGR_STRAGE_FILE" 
+   ("PROCESSID" int NOT NULL,
+    "SITEID" int,
+    "SITEMANAGEMENTTYPE" NCLOB,
+    "LASTUPDATETIME" nvarchar2(17),
+     PRIMARY KEY (PROCESSID)
+   );
+   
+   CREATE TABLE "##"."MGR_STRAGE_DB" 
+   ("PROCESSID" int NOT NULL,
+    "SCHEMANAME" nvarchar2(255), 
+    "DBUSER" nvarchar2(255),
+    "DBPASSWORD" nvarchar2(515),
+    "OWNER" nvarchar2(255),
+    "DBSERVER" nvarchar2(255),
+    "LASTUPDATETIME" nvarchar2(17),
+     PRIMARY KEY (PROCESSID)
+   );
+   
+   CREATE TABLE "##"."MGR_TASK" 
+   ("TASKID" nvarchar2(20) NOT NULL, 
+    "TASKNAME" nvarchar2(255), 
+    "CUSTOMTASKID" nvarchar2(20),
+    "PROCESSID" int NOT NULL,
+    "LASTUPDATETIME" nvarchar2(17),
+    PRIMARY KEY (TASKID)
+   )

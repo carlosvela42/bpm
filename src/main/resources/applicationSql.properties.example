@@ -1,0 +1,7 @@
+spring.datasource.schema-name=EARTHDB
+spring.datasource.server=172.20.108.60
+spring.datasource.username=sa
+spring.datasource.password=Earth12345
+spring.datasource.maximum-pool-size=1
+spring.datasource.db-type=SQL_SERVER
+spring.datasource.port=1433

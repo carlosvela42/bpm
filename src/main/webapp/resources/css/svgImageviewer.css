@@ -1,0 +1,25 @@
+body{
+	margin:0px;
+}
+
+#toolbar{
+	margin:10px;
+}
+
+#mainContent{
+    margin-top:100px;
+}
+
+
+div#container {     
+        border:2px solid #000;
+        overflow-x: scroll;
+      }
+
+label {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  padding: 1px;
+}

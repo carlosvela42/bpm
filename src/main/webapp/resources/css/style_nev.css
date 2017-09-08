@@ -1,0 +1,476 @@
+.pull-left {
+	float: left !important;
+}
+
+.pull-right {
+	float: right !important;
+}
+
+.clearfix {
+	clear: both;
+}
+
+.center-block {
+	margin: auto;
+	padding-top: 22px;
+}
+
+.content_foot {
+	height: 80px;
+}
+
+.center-search {
+	margin: auto;
+	padding-bottom: 15px;
+	float: right;
+}
+
+.center-search-server {
+    margin: auto;
+    float: right;
+}
+
+.filter {
+	display: none;
+}
+
+.form-cancel {
+	display: inline-block;
+}
+
+/*Text common*/
+.text_center {
+	text-align: center;
+}
+
+/*override style.css*/
+#header .inner h1 {
+	padding: 14px 5px 16px 42px;
+	height: 60px;
+}
+
+/*icon resources*/
+.icon_add {
+	background-image: url("../images/btnAdd.png");
+}
+
+.icon_edit {
+	background-image: url("../images/btnEdit.png");
+    cursor: pointer;
+}
+
+.icon_search {
+	background-image: url("../images/search.png");
+}
+
+/*
+    MinhTV
+*/
+.processTime {
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.radius {
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+
+.inputLicense {
+	border-radius: 5px;
+	border: 1px solid #b2b1b2;
+	height: 25px;
+	width: auto !important;
+}
+
+.textbox {
+	font-weight: bold;
+}
+
+.searchBtn {
+	padding: 0px;
+	width: 130px;
+	height: 30px;
+	color: white;
+	background: #808080 url("../images/iconSearch.png") no-repeat 20px
+		center;
+}
+
+.searchPanel {
+	float: right;
+}
+
+.licenseTable {
+	margin: 20px 0;
+}
+
+.form-search input {
+	margin-left: 20px;
+}
+
+.form-search input[type="number"] {
+	width: 270px;
+	height: 30px;
+}
+
+::-webkit-input-placeholder {
+	padding-left: 0px;
+}
+
+::-moz-placeholder {
+	padding-left: 20px;
+}
+
+:-ms-input-placeholder {
+	padding-left: 20px;
+}
+
+:-moz-placeholder {
+	padding-left: 20px;
+}
+
+@media ( min-width : 1200px) {
+	.container {
+		width: 100%
+	}
+}
+
+/*
+Popup
+*/
+a.btn {
+	background-color: #dddddd;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+
+.popup {
+	margin: 70px auto;
+	padding: 20px;
+	background: #fff;
+	border-radius: 5px;
+	width: 30%;
+	position: relative;
+	transition: all 5s ease-in-out;
+}
+
+.popup .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}
+
+@media screen and (max-width: 700px) {
+	.popup {
+		width: 70%;
+	}
+}
+
+.modal-footer-popup {
+	text-align: center;
+}
+
+tr.table_header td {
+	white-space: nowrap;
+}
+
+/* add Schedule  */
+.halfWidth {
+	width: 50% !important;
+	margin: 7px 0;
+}
+
+.halfWidth:FIRST-CHILD {
+	margin-top: 14px;
+}
+
+.lastSecond {
+	margin-bottom: 14px;
+}
+
+.nextDateTimeSchedule label {
+	vertical-align: middle;
+	margin-left: 15px;
+	/*font-weight: bold;*/
+}
+
+/*common: giong component.css dong 148*/
+select {
+	border-radius: 5px;
+	border: 1px solid #e4e6e8;
+	padding: 5px 10px;
+	width: 100%;
+}
+
+.btn_login {
+	width: 270px;
+	height: 40px;
+	color: white;
+	margin-top: 10px;
+	background: #0076e4 url("../images/btnLogin.png") no-repeat left center;
+	background-position: 10px;
+}
+
+.btn_save {
+	width: 270px;
+	height: 40px;
+	color: white;
+	/*margin-top: 10px;*/
+	background: #0076e4 url("../images/btnSave.png") no-repeat 20px center;
+}
+
+.btn_cancel {
+	border: 1px solid rgb(183, 183, 183);
+	width: 270px;
+	height: 40px;
+	color: black;
+	/*margin-top: 10px;*/
+	background: #FAFAFA url("../images/btnCancel.png") no-repeat 20px center;
+}
+
+.btn_save_imageViewer {
+	color: white;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background: #0076e4 no-repeat 10px center;
+}
+
+.btn_save_popup {
+	color: white;
+	/*margin-top: 10px;*/
+	background: #0076e4 url("../images/btnSave.png") no-repeat 10px center;
+}
+
+.btn_popup {
+	font-size: small;
+	width: 130px;
+	height: 30px;
+}
+
+.btn_cancel_imageViewer {
+	color: black;
+	margin-top: 10px;
+	background: #FAFAFA no-repeat 10px center;
+	margin-bottom: 10px;
+}
+
+.btn_imageViewer{
+	color: white;
+	/*margin-top: 10px;*/
+	background: #808080 no-repeat 10px center;
+}
+
+.btn_cancel_popup {
+	color: black;
+	/*margin-top: 10px;*/
+	background: #FAFAFA url("../images/btnCancel.png") no-repeat 10px center;
+}
+
+.btn_delete {
+	width: 270px;
+	height: 40px;
+	color: white;
+	/*margin-top: 10px;*/
+	background: black url("../images/recyclebin.png") no-repeat 20px center;
+}
+
+.btn_unlock {
+	border:1px solid rgb(183, 183, 183);
+    width: 270px;
+    height: 40px;
+    color: black;
+    /*margin-top: 10px;*/
+    background: #fafafa url("../images/unlock.png") no-repeat 20px center;
+}
+
+.btn_add {
+	background: black url("../images/btnAdd.png") no-repeat center;
+}
+.btn_filter_select {
+    background: transparent url("../images/filter.png") no-repeat center;
+	width:30px;
+	height:30px;
+}
+.btn_filter {
+	background: transparent url(../images/filter.png) no-repeat center;
+	width: 30px;
+	height: 30px;
+	border: 0px !important;
+}
+.btn_remove {
+	width: 131px;
+	height: 32px;
+	color: white;
+	/*margin-top: 10px;*/
+	background: black url("../images/btnRemove.png") no-repeat 15px center;
+}
+
+.btn_upload {
+	color: black;
+	background: #fafafa url("../images/upload.png") no-repeat 95% center;
+	font-size: smaller;
+}
+
+.btn_download {
+	color: white;
+	background: black url("../images/download.png") no-repeat 95% center;
+	font-size: smaller;
+}
+
+.text_login {
+	height: 33px;
+	width: 250px;
+}
+
+.text_icon {
+	width: 6%;
+	padding-top: 3px;
+}
+
+/*Add template model*/
+#addFieldModal .modal-dialog {
+	width: auto;
+	margin: 30px 30px;
+}
+
+.table_list .addTemplate td {
+	padding: 5px 20px !important;
+}
+
+/*Data directory list screen*/
+.permision {
+	vertical-align: bottom;
+}
+
+/* Template authority setting */
+ul.accessRights li {
+	padding-top: 20px;
+}
+
+ul.accessRights li:last-child {
+	padding-bottom: 10px;
+}
+
+table.accessRightTable tr:last-child {
+	border-bottom: none;
+}
+
+.title_popup {
+	color: #0076e4;
+	font-weight: bold;
+	font-size: large;
+}
+
+table.accessRightTable tr:last-child {
+	border-bottom: none;
+}
+
+.span_menu {
+	font-size: 16px;
+}
+
+.span_menu_title {
+	font-weight: bold;
+}
+
+.btn_save_template {
+	width: 150px;
+	height: 41px;
+	color: white;
+	/*margin-top: 10px;*/
+	background: #0076e4 url("../images/btnSave.png") no-repeat 20px center;
+}
+
+.btn_cancel_template {
+	width: 150px;
+	height: 41px;
+	color: black;
+	/*margin-top: 10px;*/
+	background: #FAFAFA url("../images/btnCancel.png") no-repeat 20px center;
+}
+
+.btn-file {
+	position: relative;
+	overflow: hidden;
+}
+
+.btn-file input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 100%;
+	min-height: 100%;
+	font-size: 100px;
+	text-align: right;
+	filter: alpha(opacity = 0);
+	opacity: 0;
+	outline: none;
+	background: white;
+	cursor: inherit;
+	display: block;
+}
+
+.wrap {
+	word-break: break-all;
+	white-space: -moz-pre-wrap; /* Mozilla */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	white-space: pre-wrap; /* CSS 2.1 */
+	white-space: pre-line; /* CSS 3 */
+	word-wrap: break-word; /* IE */
+}
+
+
+.nav-tabs {
+	background-color: #ddd;
+}
+
+.nav-tabs-iv {
+	background-color: transparent;
+	border-bottom: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.nav-tabs > li > a{
+	background-color: #CCCCCC;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover{
+	border-bottom:1px solid #ddd;
+	background-color: #808080;
+	color: white;
+}
+
+.panel-default>.panel-heading {
+	 background-color: transparent;
+}
+
+.numberProperties{
+	margin-top: 10px;
+	height:40px;
+	padding-left: 5px;
+}
+
+.debug_info {
+	display: none;
+}

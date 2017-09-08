@@ -1,0 +1,604 @@
+@charset "UTF-8";
+/*
+
+INDEX
+----- 01. RESET リセット
+----- 02. MODULE モジュール
+----- 03. GLOBAL 全体共通
+----- 04. TOP トップページ
+----- 05. 下層共通
+
+*/
+/* ------------------------------------------------------------
+01. RESET リセット
+------------------------------------------------------------ */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, dialog, figure, footer, header,
+menu, nav, section,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: normal;
+  line-height: 1;
+  vertical-align: bottom; }
+
+body {
+  line-height: 1; }
+
+.disabled{
+  pointer-events:none;
+  opacity:0.4;
+}
+
+article, aside, dialog, figure, footer, header, nav, section {
+  display: block; }
+
+ul, ol, dl {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #000;
+  text-decoration: none;
+  vertical-align: baseline;
+  background: transparent;
+  outline: none; }
+
+img {
+  vertical-align: bottom; }
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+input[type=number]{
+  width:100%;
+
+}
+
+/* ------------------------------------------------------------
+02. MODULE モジュール
+------------------------------------------------------------ */
+/* ------------------------------------------------------------
+03. GLOBAL 全体共通
+------------------------------------------------------------ */
+#login #header {
+  display: none; }
+
+body {
+  min-width: 1280px;
+  font-family: Meiryo, MS PGothic, sans-serif;
+  background: url(../images/bg.png) center bottom no-repeat;
+  background-color: #f2f2f2; }
+  body #header {
+    height: 60px;
+    background: #0076e4; }
+    body #header .inner {
+      position: relative; }
+      body #header .inner h1 {
+        float: left;
+        width: 320px;
+        *display: inline;
+        background: #fff;
+        padding: 14px 0 14px 40px;
+        box-sizing: border-box;
+        border-left: 1px solid #ccc; }
+      body #header .inner .iv  {
+        background: #f2f2f2;
+        height: 60px;
+        padding-top: 25px;
+        padding-left: 15px;
+        float: left;
+        width: 180px;
+        *display: inline; }
+
+      body #header .inner nav.normal {
+        float: left;
+        width: 60px;
+        *display: inline; }
+        body #header .inner nav.normal .btn {
+          background: #fff;
+          width: 60px;
+          height: 60px; }
+        body #header .inner nav.normal > ul {
+          display: none;
+          border-top: 1px solid #e6e6e6;
+          background-color: #fff;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 230px;
+          border-right: 1px solid #e6e6e6; }
+          body #header .inner nav.normal > ul > li {
+            background-position: left 40px center;
+            background-repeat: no-repeat; }
+            body #header .inner nav.normal > ul > li.active {
+              background-color: #5eb6ff; }
+              body #header .inner nav.normal > ul > li.active .name {
+                background-image: url(../images/bg_icon_global_nav_01_active.png); }
+            body #header .inner nav.normal > ul > li .name {
+              font-size: 13px;
+              font-weight: bold;
+              padding: 18px 0 18px 88px;
+              border-bottom: 1px solid #e6e6e6;
+              background-position: right 20px center;
+              background-repeat: no-repeat;
+              background-image: url(../images/bg_icon_global_nav_01.png); }
+              body #header .inner nav.normal > ul > li .name:hover {
+                background-image: url(../images/bg_icon_global_nav_01_active.png); }
+            body #header .inner nav.normal > ul > li > ul {
+              display: none;
+              border-top: 1px solid #ccc;
+              position: absolute;
+              top: -1px;
+              left: 230px;
+              background-color: #e6e6e6; }
+              body #header .inner nav.normal > ul > li > ul li {
+                background-color: #e6e6e6; }
+                body #header .inner nav.normal > ul > li > ul li a {
+                  width: 250px;
+                  display: block;
+                  font-size: 13px;
+                  padding: 18px 0 18px 30px;
+                  border-bottom: 1px solid #ccc;
+                  transition: .2s all ease; }
+                  body #header .inner nav.normal > ul > li > ul li a:hover {
+                    background-color: #0076e4;
+                    color: #fff; }
+            body #header .inner nav.normal > ul > li.main {
+              font-size: 13px;
+              font-weight: bold;
+              border-bottom: 1px solid #e6e6e6; }
+              body #header .inner nav.normal > ul > li.main a {
+                display: block;
+                padding: 18px 0 18px 88px;
+                background-image: url(../images/bg_icon_global_nav_main.png);
+                background-repeat: no-repeat;
+                background-position: left 40px center; }
+              body #header .inner nav.normal > ul > li.main:hover {
+                background-color: #5eb6ff; }
+                body #header .inner nav.normal > ul > li.main:hover a {
+                  color: #fff;
+                  background-image: url(../images/bg_icon_global_nav_main_active.png); }
+            body #header .inner nav.normal > ul > li.user {
+              background-image: url(../images/bg_icon_global_nav_user.png); }
+              body #header .inner nav.normal > ul > li.user.active {
+                background-image: url(../images/bg_icon_global_nav_user_active.png); }
+            body #header .inner nav.normal > ul > li.report {
+              background-image: url(../images/bg_icon_global_nav_report.png); }
+              body #header .inner nav.normal > ul > li.report.active {
+                background-image: url(../images/bg_icon_global_nav_report_active.png); }
+            body #header .inner nav.normal > ul > li.authority {
+              background-image: url(../images/bg_icon_global_nav_authority.png); }
+              body #header .inner nav.normal > ul > li.authority.active {
+                background-image: url(../images/bg_icon_global_nav_authority_active.png); }
+            body #header .inner nav.normal > ul > li.process {
+              background-image: url(../images/bg_icon_global_nav_process.png); }
+              body #header .inner nav.normal > ul > li.process.active {
+                background-image: url(../images/bg_icon_global_nav_process_active.png); }
+            body #header .inner nav.normal > ul > li.data {
+              background-image: url(../images/bg_icon_global_nav_data.png); }
+              body #header .inner nav.normal > ul > li.data.active {
+                background-image: url(../images/bg_icon_global_nav_data_active.png); }
+            body #header .inner nav.normal > ul > li.tool {
+              background-image: url(../images/bg_icon_global_nav_tool.png); }
+              body #header .inner nav.normal > ul > li.tool.active {
+                background-image: url(../images/bg_icon_global_nav_tool_active.png); }
+            body #header .inner nav.normal > ul > li:hover .name {
+              color: #fff; }
+      body #header .inner nav {
+        float: left;
+        width: 60px;
+        *display: inline; }
+        body #header .inner nav .btn {
+          background: #fff;
+          width: 60px;
+          height: 60px; }
+        body #header .inner nav > ul {
+          display: none;
+          border-top: 1px solid #e6e6e6;
+          background-color: #fff;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 230px;
+          border-right: 1px solid #e6e6e6; }
+          body #header .inner nav > ul > li {
+            background-position: left 40px top 15px;
+            background-repeat: no-repeat; }
+            body #header .inner nav > ul > li.active {
+              background-color: #5eb6ff; }
+              body #header .inner nav > ul > li.active .name {
+                background-image: url(../images/bg_icon_global_nav_01_active.png);
+                color: #fff; }
+            body #header .inner nav > ul > li .name {
+              font-size: 13px;
+              font-weight: bold;
+              padding: 20px 0 18px 70px;
+              border-bottom: 1px solid #e6e6e6;
+              background-position: right 20px center;
+              background-repeat: no-repeat;
+              background-image: url(../images/bg_icon_global_nav_01.png); }
+            body #header .inner nav > ul > li > ul {
+              display: none;
+              border-top: 1px solid #ccc;
+              background-color: #e6e6e6; }
+              body #header .inner nav > ul > li > ul > li {
+                background-color: #e6e6e6;
+                padding: 20px 20px 20px 70px;
+                font-size: 12px;
+                border-bottom: 1px solid #ccc;
+                position: relative;
+                background-repeat: no-repeat;
+                background-position: left 40px center; }
+                body #header .inner nav > ul > li > ul > li > a {
+                  width: 250px;
+                  display: block;
+                  font-size: 13px;
+                  padding: 18px 0 18px 30px;
+                  border-bottom: 1px solid #ccc;
+                  transition: .2s ease background-color; }
+                  body #header .inner nav > ul > li > ul > li > a:hover {
+                    background-color: #0076e4;
+                    color: #fff; }
+                body #header .inner nav > ul > li > ul > li.link {
+                  padding: 0;
+                  border: none; }
+                  body #header .inner nav > ul > li > ul > li.link a {
+                    width: auto;
+                    padding-left: 70px; }
+                body #header .inner nav > ul > li > ul > li > ul {
+                  z-index: 302;
+                  display: none;
+                  position: absolute;
+                  left: 230px;
+                  top: 0; }
+                  body #header .inner nav > ul > li > ul > li > ul > li {
+                    display: none;
+                    width: 200px;
+                    background: #fff;
+                    border: none;
+                    padding: 10px 20px;
+                    color: #000; }
+                    body #header .inner nav > ul > li > ul > li > ul > li:not(.inputHover):hover {
+                      background-color: #5eb6fe;
+                      color: #fff; }
+
+                body #header .inner nav > ul > li > ul > li:not(.inputHover):hover {
+                  background-color: #0076e4;
+                  color: #fff; }
+                  body #header .inner nav > ul > li > ul > li:hover > ul > li {
+                    display: block; }
+                body #header .inner nav > ul > li > ul > li.icon_01_01 {
+                  background-image: url(../images/iv_icon_01_01.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_01_01:hover {
+                    background-image: url(../images/iv_icon_01_01_active.png); }
+                body #header .inner nav > ul > li > ul > li.icon_01_02 {
+                  background-image: url(../images/iv_icon_01_02.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_01_02:hover {
+                    background-image: url(../images/iv_icon_01_02_active.png); }
+                body #header .inner nav > ul > li > ul > li.icon_01_03 {
+                  background-image: url(../images/iv_icon_01_03.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_01_03:hover {
+                    background-image: url(../images/iv_icon_01_03_active.png); }
+                body #header .inner nav > ul > li > ul > li.icon_02_01 > ul > li{
+                  width: 120px;
+                }
+                body #header .inner nav > ul > li > ul > li.icon_02_01 {
+                  background-image: url(../images/iv_icon_02_01.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_02_01:hover {
+                    background-image: url(../images/iv_icon_02_01_active.png); }
+                body #header .inner nav > ul > li > ul > li.icon_02_02 {
+                  background-image: url(../images/iv_icon_02_02.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_02_02:hover {
+                    background-image: url(../images/iv_icon_02_02_active.png); }
+                body #header .inner nav > ul > li > ul > li.icon_02_03 {
+                  background-image: url(../images/iv_icon_02_03.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_02_03:hover {
+                    background-image: url(../images/iv_icon_02_03_active.png); }
+                body #header .inner nav > ul > li > ul > li.icon_03_01 > ul > li{
+                  width: 130px;
+                  background-repeat: no-repeat;
+                  background-position: left 5px center;
+                  padding-left: 25px;
+                }
+
+              body #header .inner nav > ul > li > ul > li.icon_03_01 > ul > li.icon_03_01_01{
+                background-image: url(../images/imageViewer/line.png);
+
+                }
+                body #header .inner nav > ul > li > ul > li.icon_03_01 > ul > li.icon_03_01_02{
+                  background-image: url(../images/imageViewer/rectangle1.png);
+                }
+                body #header .inner nav > ul > li > ul > li.icon_03_01 > ul > li.icon_03_01_03{
+                  background-image: url(../images/imageViewer/textIcon.png);
+                }
+                body #header .inner nav > ul > li > ul > li.icon_03_01 > ul > li.icon_03_01_04{
+                  background-image: url(../images/imageViewer/highlight.png);
+                }
+                body #header .inner nav > ul > li > ul > li.icon_03_01 > ul > li.icon_03_01_05{
+                  background-image: url(../images/imageViewer/comment.png);
+                }
+                body #header .inner nav > ul > li > ul > li.icon_03_01 {
+                  background-image: url(../images/iv_icon_03_01.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_03_01:hover {
+                    background-image: url(../images/iv_icon_03_01_active.png); }
+                body #header .inner nav > ul > li > ul > li.icon_03_02 {
+                  background-image: url(../images/iv_icon_03_02.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_03_02:hover a {
+                    background-image: url(../images/iv_icon_03_02_active.png);
+                    background-repeat: no-repeat;
+                    background-position: left 40px center; }
+                body #header .inner nav > ul > li > ul > li.icon_03_03 {
+                  background-image: url(../images/iv_icon_03_03.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_03_03:hover a {
+                    background-image: url(../images/iv_icon_03_03_active.png);
+                    background-repeat: no-repeat;
+                    background-position: left 40px center; }
+                body #header .inner nav > ul > li > ul > li.icon_03_04 {
+                  background-image: url(../images/iv_icon_03_04.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_03_04:hover a {
+                    background-image: url(../images/iv_icon_03_04_active.png);
+                    background-repeat: no-repeat;
+                    background-position: left 40px center; }
+                body #header .inner nav > ul > li > ul > li.icon_04_01 {
+                  background-image: url(../images/iv_icon_04_01.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_04_01:hover {
+                    background-image: url(../images/iv_icon_04_01_active.png); }
+                body #header .inner nav > ul > li > ul > li.icon_04_02 {
+                  background-image: url(../images/iv_icon_04_02.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_04_02:hover {
+                    background-image: url(../images/iv_icon_04_02_active.png); }
+                body #header .inner nav > ul > li > ul > li.icon_04_03 {
+                  background-image: url(../images/iv_icon_04_03.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_04_03:hover {
+                    background-image: url(../images/iv_icon_04_03_active.png); }
+                body #header .inner nav > ul > li > ul > li.icon_04_04 {
+                  background-image: url(../images/iv_icon_04_04.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_04_04:hover {
+                    background-image: url(../images/iv_icon_04_04_active.png); }
+                body #header .inner nav > ul > li > ul > li.icon_04_05 {
+                  background-image: url(../images/iv_icon_04_05.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_04_05:hover {
+                    background-image: url(../images/iv_icon_04_05_active.png); }
+                body #header .inner nav > ul > li > ul > li.icon_05_01 {
+                  background-image: url(../images/iv_icon_05_01.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_05_01:hover {
+                    background-image: url(../images/iv_icon_05_01_active.png); }
+                body #header .inner nav > ul > li > ul > li.icon_05_02 {
+                  background-image: url(../images/iv_icon_05_02.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_05_02:hover {
+                    background-image: url(../images/iv_icon_05_02_active.png); }
+                body #header .inner nav > ul > li > ul > li.icon_05_03 {
+                  background-image: url(../images/iv_icon_05_03.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_05_03:hover {
+                    background-image: url(../images/iv_icon_05_03_active.png); }
+                body #header .inner nav > ul > li > ul > li.icon_05_04 {
+                  background-image: url(../images/iv_icon_05_04.png); }
+                  body #header .inner nav > ul > li > ul > li.icon_05_04:hover {
+                    background-image: url(../images/iv_icon_05_04_active.png); }
+                body #header .inner nav > ul > li > ul > li.inputHover > ul > li{
+                  width: 80px;
+                }
+            body #header .inner nav > ul > li.icon_01 {
+              background-image: url(../images/iv_icon_01.png); }
+              body #header .inner nav > ul > li.icon_01.active {
+                background-image: url(../images/iv_icon_01_active.png); }
+            body #header .inner nav > ul > li.icon_02 {
+              background-image: url(../images/iv_icon_02.png); }
+              body #header .inner nav > ul > li.icon_02.active {
+                background-image: url(../images/iv_icon_02_active.png); }
+            body #header .inner nav > ul > li.icon_03 {
+              background-image: url(../images/iv_icon_03.png); }
+              body #header .inner nav > ul > li.icon_03.active {
+                background-image: url(../images/iv_icon_03_active.png); }
+            body #header .inner nav > ul > li.icon_04 {
+              background-image: url(../images/iv_icon_04.png); }
+              body #header .inner nav > ul > li.icon_04.active {
+                background-image: url(../images/iv_icon_04_active.png); }
+            body #header .inner nav > ul > li.icon_05 {
+              background-image: url(../images/iv_icon_05.png); }
+              body #header .inner nav > ul > li.icon_05.active {
+                background-image: url(../images/iv_icon_05_active.png); }
+            body #header .inner nav > ul > li.icon_06 {
+              background-image: url(../images/iv_icon_06.png); }
+              body #header .inner nav > ul > li.icon_06.active {
+                background-image: url(../images/iv_icon_06_active.png); }
+      body #header .inner .info {
+        float: right;
+        width: auto;
+        *display: inline;
+        height: 60px;
+        padding: 0 40px 0 0; }
+        body #header .inner .info .name {
+          float: left;
+          width: 230px;
+          *display: inline;
+          overflow: hidden;
+          padding: 8px 0; }
+          body #header .inner .info .name figure {
+            float: left;
+            width: 44px;
+            *display: inline;
+            margin: 0 15px 0 0; }
+          body #header .inner .info .name p {
+            padding: 15px 0;
+            color: #fff;
+            float: left;
+            width: 170px;
+            *display: inline;
+            font-size: 13px; }
+        body #header .inner .info .logout {
+          float: left;
+          width: 130px;
+          *display: inline;
+          padding: 15px 0; }
+  body #footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%; }
+    body #footer #copyright {
+      text-align: center;
+      background: #808080;
+      color: #fff;
+      font-size: 11px;
+      padding: 10px 0; }
+
+.black {
+  background: url(../img/global/bg_black.png) center bottom no-repeat;
+  background-color: #616161 !important; }
+
+/* ------------------------------------------------------------
+04. TOP トップページ
+------------------------------------------------------------ */
+/* ------------------------------------------------------------
+05. COMMON 下層共通
+------------------------------------------------------------ */
+#content .content_main_login {
+  text-align: center;
+  padding: 240px 0 20px; }
+#content .content_head {
+  text-align: center;
+  background: #fff;
+  border-top: 1px solid #ccc; }
+#content .content_main {
+  width: 1250px;
+  padding: 0 15px;
+   }
+  #content .content_main .imgcnt {
+    text-align: center;
+    padding: 20vh 0 0 0; }
+#content .content_foot {
+  text-align: center;
+  background: #fff;
+  width: 100%;
+  position: fixed;
+  bottom: 31px; }
+
+/* clearfix */
+.cf {
+  *zoom: 1; }
+  .cf:after {
+    content: "";
+    display: block;
+    clear: both; }
+
+/*# sourceMappingURL=style.css.map */
+
+.imageViewerPopup{
+  padding:9px 15px;
+  border-bottom:1px solid #eee;
+  background-color: #0076E4;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.imageViewerTitle{
+  color: white;
+}
+
+.imageViewerLabel{
+  width:200px;
+}
+
+.imageViewerInput{
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  width: 10%;
+}
+
+.content_main{
+  width: 1250px;
+
+}
+
+.rangeImageViewer{
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+.tableImageViewer{
+  margin-top: 15px;
+}
+
+.modalProperties{
+padding-bottom: 10px;
+padding-left: 150px;
+  display: inline-block;
+}
+
+.modalTextProperties{
+  padding-top: 200px;
+  padding-bottom: 10px;
+  padding-left: 150px;
+}
+ .modalCommentProperties{
+   padding-left: 150px;
+   padding-bottom: 10px;
+ }
+
+.noDisplay{
+  display: none;
+}
+
+.ivSpan{
+  padding-left: 10px;font-weight: bold;
+}
+
+.divContent{
+  margin-left:217px;width:1460px;overflow: scroll;
+}

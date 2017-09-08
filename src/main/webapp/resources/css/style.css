@@ -1,0 +1,462 @@
+@charset "UTF-8";
+/*
+
+INDEX
+----- 01. RESET リセット
+----- 02. MODULE モジュール
+----- 03. GLOBAL 全体共通
+----- 04. TOP トップページ
+----- 05. 下層共通
+
+*/
+/* ------------------------------------------------------------
+01. RESET リセット
+------------------------------------------------------------ */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, dialog, figure, footer, header,
+menu, nav, section,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: normal;
+    line-height: 1;
+    vertical-align: bottom;
+}
+
+body {
+    line-height: 1;
+}
+
+article, aside, dialog, figure, footer, header, nav, section {
+    display: block;
+}
+
+ul, ol, dl {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #000;
+    text-decoration: none;
+    vertical-align: baseline;
+    background: transparent;
+    outline: none;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+ins {
+    background-color: #ff9;
+    color: #000;
+    text-decoration: none;
+}
+
+mark {
+    background-color: #ff9;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted #000;
+    cursor: help;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+input, select {
+    vertical-align: middle;
+}
+
+/* ------------------------------------------------------------
+02. MODULE モジュール
+------------------------------------------------------------ */
+/* ------------------------------------------------------------
+03. GLOBAL 全体共通
+------------------------------------------------------------ */
+#login #header {
+    display: none;
+}
+
+body {
+    min-width: 1280px;
+    font-family: Meiryo, MS PGothic, sans-serif;
+    background: url(../images/global/bg.png) center bottom no-repeat;
+    background-color: #f2f2f2;
+}
+
+body #header {
+    height: 60px;
+    background: #0076e4;
+}
+
+body #header .inner {
+    position: relative;
+}
+
+body #header .inner h1 {
+    float: left;
+    width: 320px;
+    *display: inline;
+    background: #fff;
+    padding: 14px 0 14px 40px;
+    box-sizing: border-box;
+    border-left: 1px solid #ccc;
+}
+
+body #header .inner nav {
+    float: left;
+    width: 60px;
+    *display: inline;
+
+}
+
+body #header .inner nav .btn {
+    background: #fff;
+    width: 60px;
+    height: 60px;
+}
+
+body #header .inner nav > ul {
+    z-index: 1;
+    display: none;
+    border-top: 1px solid #e6e6e6;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 230px;
+    border-right: 1px solid #e6e6e6;
+}
+
+body #header .inner nav > ul > li {
+    background-position: left 40px center;
+    background-repeat: no-repeat;
+}
+
+body #header .inner nav > ul > li.active {
+    background-color: #5eb6ff;
+}
+
+body #header .inner nav > ul > li.active .name {
+    background-image: url(../images/bg_icon_global_nav_01_active.png);
+}
+
+body #header .inner nav > ul > li .name {
+    font-size: 13px;
+    font-weight: bold;
+    padding: 18px 0 18px 88px;
+    border-bottom: 1px solid #e6e6e6;
+    background-position: right 20px center;
+    background-repeat: no-repeat;
+    background-image: url(../images/bg_icon_global_nav_01.png);
+}
+
+body #header .inner nav > ul > li .name:hover {
+    background-image: url(../images/bg_icon_global_nav_01_active.png);
+}
+
+body #header .inner nav > ul > li > ul {
+    display: none;
+    border-top: 1px solid #ccc;
+    position: absolute;
+    top: -1px;
+    left: 230px;
+    background-color: #e6e6e6;
+}
+
+body #header .inner nav > ul > li > ul li {
+    background-color: #e6e6e6;
+}
+
+body #header .inner nav > ul > li > ul li a {
+    width: 250px;
+    display: block;
+    font-size: 13px;
+    padding: 18px 0 18px 30px;
+    border-bottom: 1px solid #ccc;
+    transition: .2s all ease;
+}
+
+body #header .inner nav > ul > li > ul li a:hover {
+    background-color: #0076e4;
+    color: #fff;
+}
+
+body #header .inner nav > ul > li.main {
+    font-size: 13px;
+    font-weight: bold;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+body #header .inner nav > ul > li.main a {
+    display: block;
+    padding: 18px 0 18px 88px;
+    background-image: url(../images/bg_icon_global_nav_main.png);
+    background-repeat: no-repeat;
+    background-position: left 40px center;
+}
+
+body #header .inner nav > ul > li.main:hover {
+    background-color: #5eb6ff;
+}
+
+body #header .inner nav > ul > li.main:hover a {
+    color: #fff;
+    background-image: url(../images/bg_icon_global_nav_main_active.png);
+}
+
+body #header .inner nav > ul > li.user {
+    position: relative;
+    background-image: url(../images/bg_icon_global_nav_user.png);
+}
+
+body #header .inner nav > ul > li.user.active {
+
+    background-image: url(../images/bg_icon_global_nav_user_active.png);
+}
+
+body #header .inner nav > ul > li.report {
+    position: relative;
+    background-image: url(../images/bg_icon_global_nav_report.png);
+}
+
+body #header .inner nav > ul > li.report.active {
+
+    background-image: url(../images/bg_icon_global_nav_report_active.png);
+}
+
+body #header .inner nav > ul > li.authority {
+    position: relative;
+    background-image: url(../images/bg_icon_global_nav_authority.png);
+}
+
+body #header .inner nav > ul > li.authority.active {
+
+    background-image: url(../images/bg_icon_global_nav_authority_active.png);
+}
+
+body #header .inner nav > ul > li.process {
+    position: relative;
+    background-image: url(../images/bg_icon_global_nav_process.png);
+}
+
+body #header .inner nav > ul > li.process.active {
+
+    background-image: url(../images/bg_icon_global_nav_process_active.png);
+}
+
+body #header .inner nav > ul > li.data {
+    position: relative;
+    background-image: url(../images/bg_icon_global_nav_data.png);
+}
+
+body #header .inner nav > ul > li.data.active {
+
+    background-image: url(../images/bg_icon_global_nav_data_active.png);
+}
+
+body #header .inner nav > ul > li.tool {
+    position: relative;
+    background-image: url(../images/bg_icon_global_nav_tool.png);
+}
+
+body #header .inner nav > ul > li.tool.active {
+
+    background-image: url(../images/bg_icon_global_nav_tool_active.png);
+}
+
+body #header .inner nav > ul > li:hover .name {
+    color: #fff;
+}
+
+body #header .inner .info {
+    float: right;
+    width: auto;
+    *display: inline;
+    height: 60px;
+    padding: 0 40px 0 0;
+}
+
+body #header .inner .info .name {
+    float: left;
+    margin-right: 10px;
+    *display: inline;
+    overflow: hidden;
+    padding: 8px 0;
+}
+
+body #header .inner .info .name figure {
+    float: left;
+    width: 44px;
+    *display: inline;
+    margin: 0 15px 0 0;
+}
+
+body #header .inner .info .name p {
+    padding: 15px 0;
+    color: #fff;
+    float: left;
+    *display: inline;
+    font-size: 13px;
+}
+
+body #header .inner .info .logout {
+    float: left;
+    width: 130px;
+    *display: inline;
+    padding: 15px 0;
+}
+
+body #footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+body #footer #copyright {
+    text-align: center;
+    background: #808080;
+    color: #fff;
+    font-size: 11px;
+    padding: 10px 0;
+}
+
+.black {
+    background: url(../images/global/bg_black.png) center bottom no-repeat;
+    background-color: #616161 !important;
+}
+
+/* ------------------------------------------------------------
+04. TOP トップページ
+------------------------------------------------------------ */
+/* ------------------------------------------------------------
+05. COMMON 下層共通
+------------------------------------------------------------ */
+#content .content_main_login {
+    text-align: center;
+    padding: 240px 0 20px;
+}
+
+#content .content_head {
+    text-align: center;
+    background: #fff;
+    border-top: 1px solid #ccc;
+}
+
+#content .content_main {
+    width: 1250px;
+    margin: 20px auto 0;
+}
+
+#content .content_foot {
+    text-align: center;
+    background: #fff;
+    width: 100%;
+    position: fixed;
+    bottom: 31px;
+}
+
+/* clearfix */
+.cf {
+    *zoom: 1;
+}
+
+.cf:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.profile-border {
+    border-bottom: 1pt solid black;
+}
+
+.profile-scroll {
+    height: 440px;
+    overflow: auto;
+}
+
+.profile-width {
+    width: 45% !important;
+}
+
+.userLogin {
+    background: url(../images/login/loginIcon.png) no-repeat left center;
+    background-position: 10px;
+}
+
+.passLogin {
+    background: url(../images/login/passIcon.png) no-repeat left center;
+    background-position: 10px;
+}
+
+.full-width-scroll {
+    width: 100%;
+    overflow-y: auto;
+    height: -webkit-calc(100vh - 244px);
+    height: -moz-calc(100vh - 244px);
+    height: calc(100vh - 244px);
+}
+
+/*Template screen*/
+#addFieldModal #modal-messages {
+    padding-bottom: 20px;
+}
+
+.searchPopup {
+    top: 15%;
+}
+
+.no-workspace {
+    min-height: 34px!important;
+}
+
+.col-md-4{
+    margin-top: 4px;
+}
+/*# sourceMappingURL=style.css.map */
+
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<MGR_PROCESS processId="1" processName="Mr" processVersion="1" description="Webb" processDefinition="2" documentDataSavePath="file" lastUpdateTime="5/8/2017"/>
+	<MGR_STRAGE_DB PROCESSID="1" SCHEMANAME="Mr" DBUSER="1" DBPASSWORD="Webb" OWNER="2" DBSERVER="file" LASTUPDATETIME="5/8/2017"/>
+	<MGR_STRAGE_FILE PROCESSID="1" SITEID="1" SITEMANAGEMENTTYPE="1" LASTUPDATETIME="5/8/2017"/>
+	<MGR_STRAGE_DB PROCESSID="4" SCHEMANAME="Mr" DBUSER="1" DBPASSWORD="Webb" OWNER="2" DBSERVER="file" LASTUPDATETIME="5/8/2017"/>
+	<MGR_STRAGE_FILE PROCESSID="4" SITEID="1" SITEMANAGEMENTTYPE="1" LASTUPDATETIME="5/8/2017"/>
+	<MGR_PROCESS processId="2" processName="Mr" processVersion="1" description="Webb" processDefinition="2" documentDataSavePath="database" lastUpdateTime="5/8/2017"/>
+	<MGR_STRAGE_DB PROCESSID="2" SCHEMANAME="Mr" DBUSER="1" DBPASSWORD="Webb" OWNER="2" DBSERVER="file" LASTUPDATETIME="5/8/2017"/>
+	<MGR_PROCESS processId="3" processName="Mr" processVersion="1" description="Webb" processDefinition="2" documentDataSavePath="file" lastUpdateTime="5/8/2017"/>
+	<MGR_STRAGE_FILE PROCESSID="3" SITEID="1" SITEMANAGEMENTTYPE="1" LASTUPDATETIME="5/8/2017"/>
+</dataset>

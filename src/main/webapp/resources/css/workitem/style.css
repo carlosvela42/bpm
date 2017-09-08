@@ -1,0 +1,286 @@
+@charset "UTF-8";
+/*
+	style css for workitem screen
+*/
+/* ------------------------------------------------------------
+01. Item tree
+------------------------------------------------------------ */
+
+#treeview5 {
+	width:65%;
+	float:left;
+	height: 640px;
+	border: 1px solid #B0AFB0;
+	background: #eee;
+}
+
+#document_area {
+	width:35%;
+	float:right
+}
+
+.label-link {
+	width: 100%;
+	cursor: pointer;
+}
+
+.label-link label {
+	cursor: pointer;
+}
+
+.node-selected {
+	color: #FFFFFF;
+	background-color: #5EB4FE!important;
+	cursor: pointer;
+}
+
+.tree, .tree ul{
+	list-style-type: none;
+	margin: 0px 0px 0px 5px;
+	padding: 0;
+	position: relative;
+	overflow:hidden;
+}
+
+.first-node {
+	padding: 10px 5px !important;
+}
+
+.tree li{
+	margin: 0;
+	padding: 5px 5px 5px 25px;
+	position: relative;
+	cursor: pointer;
+}
+
+.tree li::before, .tree li::after{
+	content: '';
+	position: absolute;
+	left: 10px;
+}
+
+/* horizontal line on inner list items */
+.tree li::before {
+	border-top: 1px solid #999;
+	top: 20px;
+	width: 15px;
+	height: 0;
+}
+
+.first-node::before {
+	border-top: 0px!important;
+}
+
+.tree li::after {
+	height: 51px!important;
+}
+
+/* vertical line on list items */
+.tree li:after{
+	border-left: 1px solid #999;
+	height: 100%;
+	width: 0px;
+	top: -30px;
+}
+
+/* lower line on list items from the first level because they don't have parents */
+.tree > li::after{
+	top: 10px;
+}
+
+/* hide line from the last of the first level list items */
+.tree > li:last-child::after{
+	display: none;
+}
+
+.tree .icon {
+	height: 30px;
+	width: 30px;
+}
+
+div .label-link label {
+	margin-bottom: 5px;
+}
+
+#div_treeview {
+	overflow-x: auto;
+}
+
+.board_template {
+	vertical-align: top;
+	padding: 15px;
+	display: table-cell;
+	background: white;
+}
+
+.div-button {
+	text-align: center;
+    padding: 5px;
+    margin: 20px 0px;
+    background: white;
+}
+
+.div-button input[type=button] {
+	margin: 5px;
+}
+#template_area table>tbody>tr>td {
+	padding-left: 2px
+}	
+
+#template_area table>tbody>tr>td input[type="text"] {
+	border: none;
+}
+
+#template_area {
+	position: relative;
+}
+
+#template_area #task_list{
+	margin: 10px;
+	position: absolute;
+	bottom: 0;
+	display: table-row;
+	width: 90%;"
+}
+
+#processTbody>tr[class='required'] .control-label:after {
+	content:"*";
+	color:red;
+}
+.has-error {
+	border: 1px solid #a94442!important;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+.process {
+	background: transparent url("../../images/workitem/process.png") no-repeat center;
+}
+.workItem {
+	background: transparent url("../../images/workitem/workItem.png") no-repeat center;
+}
+.folder {
+	background: transparent url("../../images/workitem/folder.png") no-repeat center;
+}
+.list-group-item {
+	border: none;
+	padding: 10px;
+}
+
+.document-link {
+	margin: 5px 0px 10px 0px;
+	width: 100%;
+	text-align: center;
+	font-size: 13px;
+}
+
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:active {
+	text-decoration: underline;
+}
+a.disabled {
+	pointer-events: none;
+}
+
+.current-fieldset {
+	background-color: #5EB4FE;
+}
+
+.board-half-right {
+	position: relative;
+	border: none;
+	vertical-align: top;
+	padding: 0px 15px;
+	display: table-cell;
+}
+
+.template-area-fieldSet {
+	background: white;
+	border: 1px solid #B0AFB0;
+	height: 600px;
+	overflow-y: auto;
+}
+
+.task-list-area {
+	background-color: white;
+	position: absolute;
+	bottom: 0;
+	width: 608px;
+	padding-right: 15px ;
+	border: 1px solid #B0AFB0;
+}
+
+.task-list {
+	display: block;
+	padding-top: 15px;
+}
+
+.task-list label {
+	line-height: 0px;
+}
+
+.document-area {
+	border: 1px solid #B0AFB0;
+	height: 640px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border-left: 0px;
+}
+
+.content_main {
+	height: 700px;
+}
+
+.disabled {
+	cursor: not-allowed;
+	color: #999999;
+}
+
+.disabled label {
+	cursor: not-allowed;
+}
+
+.btn_back {
+	border: 1px solid rgb(183, 183, 183);
+	width: 270px;
+	height: 40px;
+	color: black;
+	background: #FAFAFA url("../../images/back_data.png") no-repeat 20px center;
+}
+
+.btn_save_data {
+	border: 1px solid rgb(183, 183, 183);
+	width: 270px;
+	height: 40px;
+	color: white;
+	background: #0076e4 url("../../images/save_data.png") no-repeat 20px center;
+}
+
+.document-image {
+	padding: 15px 15px 0px 20px;
+}
+
+.table_header td {
+	text-align: left !important;
+	padding-left: 10px !important;
+}
+
+.padding10 {
+	text-align: left !important;
+	padding-left: 10px !important;
+}
+.clientSearch>tbody>tr>td input[type=text] {
+	padding-left: 2px !important;
+}
+.tree label {
+	font-size: 13px;
+}
